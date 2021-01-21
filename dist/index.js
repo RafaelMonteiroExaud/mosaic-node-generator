@@ -1,21 +1,23 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CONFIG = exports.RGB = exports.MosaicImage = exports.JimpImage = exports.mosaic = void 0;
 const mosaic_default_config_json_1 = require("./lib/mosaic-default-config.json");
-exports.CONFIG = mosaic_default_config_json_1.CONFIG;
+Object.defineProperty(exports, "CONFIG", { enumerable: true, get: function () { return mosaic_default_config_json_1.CONFIG; } });
 const rgb_1 = require("./lib/rgb");
-exports.RGB = rgb_1.RGB;
+Object.defineProperty(exports, "RGB", { enumerable: true, get: function () { return rgb_1.RGB; } });
 const jimp_image_1 = require("./lib/jimp-image");
-exports.JimpImage = jimp_image_1.JimpImage;
+Object.defineProperty(exports, "JimpImage", { enumerable: true, get: function () { return jimp_image_1.JimpImage; } });
 const mosaic_image_1 = require("./lib/mosaic-image");
-exports.MosaicImage = mosaic_image_1.MosaicImage;
+Object.defineProperty(exports, "MosaicImage", { enumerable: true, get: function () { return mosaic_image_1.MosaicImage; } });
 const utility_1 = require("./lib/utility");
 /**
  * Generates a mosaic image
